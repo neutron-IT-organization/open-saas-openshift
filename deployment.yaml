@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opensaas
+  labels:
+    app: opensaas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opensaas
+  template:
+    metadata:
+      labels:
+        app: opensaas
+    spec:
+      containers:
+        - name: opensaas
+          image: quay.io/neutron-it/opensaas:latest
+          command: ["/bin/bash"]
+          args:
+            ["-c", "echo hello from neutron IT; while true; do sleep 10; done"]
+

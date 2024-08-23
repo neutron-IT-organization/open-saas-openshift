@@ -14,15 +14,15 @@ ENV PATH="${PATH}:/opt/app-root/src/.local/bin"
 WORKDIR /usr/src/app
 
 # Copy app dependencies and install
-COPY template/app/package*.json ./
+#COPY template/app/package*.json ./
 
-RUN npm install
+#RUN npm install
 
 # Copy the entire app source code into the container
 COPY template/app ./
 
 # Set environment variable for the database URL
-ENV DATABASE_URL="postgresql://postgres:password@db:5432/mydatabase"
+ENV DATABASE_URL="postgresql://quarkus:quarkus@postgres:5432/quarkus"
 
 # Copy .env.server.example to .env.server and update DATABASE_URL
 RUN cp .env.server.example .env.server && \
@@ -35,7 +35,7 @@ RUN cp .env.server.example .env.server && \
 # FROM node:18
 
 # Set Wasp bin path for runtime
-ENV PATH="${PATH}:/root/.wasp/cli"
+#ENV PATH="${PATH}:/root/.wasp/cli"
 
 # Copy the built app from the builder stage
 # COPY --from=builder /usr/src/app /usr/src/app
