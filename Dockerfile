@@ -18,6 +18,8 @@ COPY template/app ./
 
 # Set environment variable for the database URL
 ENV DATABASE_URL="postgresql://quarkus:quarkus@postgres:5432/quarkus"
+ENV SKIP_EMAIL_VERIFICATION_IN_DEV=true
+
 
 # Copy .env.server.example to .env.server and update DATABASE_URL
 RUN cp .env.server.example .env.server && \
@@ -31,5 +33,5 @@ RUN cp .env.client.example .env.client && \
 EXPOSE 3000
 
 # Run the Wasp app
-ENTRYPOINT ["SKIP_EMAIL_VERIFICATION_IN_DEV=true","wasp", "start"]
+ENTRYPOINT ["wasp", "start"]
 
