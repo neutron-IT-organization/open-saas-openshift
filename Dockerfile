@@ -1,5 +1,5 @@
 # Stage 1: Build the Wasp app
-FROM  registry.access.redhat.com/ubi8/nodejs-20  as builder
+FROM  registry.access.redhat.com/ubi9/nodejs-20  as builder
 
 USER 0
 
@@ -15,6 +15,7 @@ WORKDIR /usr/src/app
 
 # Copy app dependencies and install
 COPY template/app/package*.json ./
+
 RUN npm install
 
 # Copy the entire app source code into the container
@@ -28,10 +29,10 @@ RUN cp .env.server.example .env.server && \
     sed -i "s|^# DATABASE_URL=.*|DATABASE_URL=${DATABASE_URL}|" .env.server
 
 # Build the Wasp app
-RUN SKIP_EMAIL_VERIFICATION_IN_DEV=true wasp build
+# RUN SKIP_EMAIL_VERIFICATION_IN_DEV=true wasp build
 
 # Stage 2: Run the Wasp app
-FROM node:18
+# FROM node:18
 
 # Set Wasp bin path for runtime
 ENV PATH="${PATH}:/root/.wasp/cli"
@@ -40,7 +41,7 @@ ENV PATH="${PATH}:/root/.wasp/cli"
 COPY --from=builder /usr/src/app /usr/src/app
 
 # Set working directory
-WORKDIR /usr/src/app
+# WORKDIR /usr/src/app
 
 # Expose the necessary port
 EXPOSE 3000
