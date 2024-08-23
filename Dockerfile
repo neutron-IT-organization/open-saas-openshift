@@ -28,7 +28,7 @@ RUN cp .env.server.example .env.server && \
     sed -i "s|^# DATABASE_URL=.*|DATABASE_URL=${DATABASE_URL}|" .env.server
 
 # Build the Wasp app
-RUN wasp build
+RUN SKIP_EMAIL_VERIFICATION_IN_DEV=true wasp build
 
 # Stage 2: Run the Wasp app
 FROM node:18
