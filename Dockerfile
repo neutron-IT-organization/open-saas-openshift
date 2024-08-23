@@ -38,7 +38,7 @@ RUN cp .env.server.example .env.server && \
 ENV PATH="${PATH}:/root/.wasp/cli"
 
 # Copy the built app from the builder stage
-COPY --from=builder /usr/src/app /usr/src/app
+# COPY --from=builder /usr/src/app /usr/src/app
 
 # Set working directory
 # WORKDIR /usr/src/app
