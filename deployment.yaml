@@ -17,7 +17,7 @@ spec:
       containers:
         - name: opensaas
           image: quay.io/neutron-it/opensaas:latest
-          command: ["/bin/bash"]
-          args:
-            ["-c", "echo hello from neutron IT; while true; do sleep 10; done"]
+#          command: ["/bin/bash"]
+#          args:
+#            ["-c", "echo hello from neutron IT; while true; do sleep 10; done"]
 
