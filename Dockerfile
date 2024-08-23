@@ -47,5 +47,5 @@ RUN cp .env.server.example .env.server && \
 EXPOSE 3000
 
 # Run the Wasp app
-CMD ["wasp", "start"]
+ENTRYPOINT ["wasp", "start"]
 
