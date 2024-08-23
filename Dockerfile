@@ -3,6 +3,7 @@ FROM  registry.access.redhat.com/ubi9/nodejs-20  as builder
 
 USER 0
 
+RUN SKIP_EMAIL_VERIFICATION_IN_DEV=true
 # Install Wasp CLI
 RUN curl -sSL https://get.wasp-lang.dev/installer.sh | sh
 
