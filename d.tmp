@@ -1,5 +1,5 @@
 # Stage 1: Build the Wasp app
-FROM  registry.access.redhat.com/ubi8/nodejs-20  as builder
+FROM  registry.access.redhat.com/ubi9/nodejs-20  as builder
 
 USER 0
 
