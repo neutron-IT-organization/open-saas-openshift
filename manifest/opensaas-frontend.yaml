@@ -1,0 +1,64 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: opensaas-frontend
+  namespace: florian-ns
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
+  selector:
+    app: opensaas-frontend
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: opensaas-frontend
+  namespace: florian-ns
+spec:
+  host: opensaas-frontend-florian-ns.apps.neutron-sno-office.intraneutron.fr
+  to:
+    kind: Service
+    name: opensaas-frontend
+    weight: 100
+  port:
+    targetPort: 3000
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: opensaas-frontend
+  namespace: florian-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opensaas-frontend
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: opensaas-frontend
+    spec:
+      containers:
+        - resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 256Mi
+          name: opensaas-frontend-app
+          env:
+            - name: REACT_APP_API_URL
+              value: 'http://opensaas-backend-florian-ns.apps.neutron-sno-office.intraneutron.fr'
+            - name: PORT
+              value: '3000'
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          image: 'quay.io/florian_even/opensaas-frontend:latest'
+

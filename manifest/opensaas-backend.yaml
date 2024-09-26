@@ -1,0 +1,81 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: opensaas-backend
+  namespace: florian-ns
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
+  type: ClusterIP
+  selector:
+    app: opensaas-backend
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: opensaas-backend
+  namespace: florian-ns
+spec:
+  host: opensaas-backend-florian-ns.apps.neutron-sno-office.intraneutron.fr
+  to:
+    kind: Service
+    name: opensaas-backend
+    weight: 100
+  port:
+    targetPort: 3001
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: opensaas-backend
+  namespace: florian-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opensaas
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: opensaas
+    spec:
+      containers:
+        - name: opensaas-app
+          image: quay.io/florian_even/opensaas
+          ports:
+            - containerPort: 3001
+              protocol: TCP
+          env:
+            - name: JWT_SECRET
+              value: 7#!z9pr98okc^ax8)t*(7rf$99xf922)_m_&q8!1de_$dg594r
+            - name: WASP_SERVER_URL
+              value: 'http://opensaas-backend-florian-ns.apps.neutron-sno-office.intraneutron.fr'
+            - name: WASP_WEB_CLIENT_URL
+              value: 'http://opensaas-frontend-florian-ns.apps.neutron-sno-office.intraneutron.fr'
+            - name: PORT
+              value: '3001'
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: opensaas-secrets
+                  key: DATABASE_URL
+            - name: STRIPE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: opensaas-secrets
+                  key: STRIPE_API_KEY
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: opensaas-secrets
+  namespace: florian-ns
+data:
+  DATABASE_URL: cG9zdGdyZXNxbDovL3Bvc3RncmVzV2FzcERldlVzZXI6cG9zdGdyZXNXYXNwRGV2UGFzc0B3YXNwLWRldi1kYi1PcGVuU2Fhcy0wNmRlZjc3NzgxOjU0MzIvT3BlblNhYXM=
+  STRIPE_API_KEY: dGVzdA==
+type: Opaque
+
