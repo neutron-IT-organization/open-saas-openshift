@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { LoginForm, useAuth } from 'wasp/client/auth';
 import { AuthPageLayout } from './AuthPageLayout';
 

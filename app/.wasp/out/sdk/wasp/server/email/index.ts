@@ -2,9 +2,8 @@ import { initEmailSender } from "./core/index.js";
 import { EmailSender } from "./core/types.js";
 
 const emailProvider = {
-  type: "mailgun",
-  apiKey: process.env.MAILGUN_API_KEY,
-  domain: process.env.MAILGUN_DOMAIN,
+  type: "sendgrid",
+  apiKey: process.env.SENDGRID_API_KEY,
 } as const;
 
 // PUBLIC API

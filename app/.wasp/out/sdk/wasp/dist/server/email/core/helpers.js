@@ -11,7 +11,7 @@ export function formatFromField({ email, name, }) {
 // PRIVATE API
 export function getDefaultFromField() {
     return {
-        email: "me@example.com",
+        email: "florian.even@neutron-it.fr",
         name: "Open SaaS App",
     };
 }

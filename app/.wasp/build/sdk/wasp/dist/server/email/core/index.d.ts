@@ -1,1 +1,1 @@
-export { initMailgunEmailSender as initEmailSender } from "./providers/mailgun.js";
+export { initSendGridEmailSender as initEmailSender } from "./providers/sendgrid.js";

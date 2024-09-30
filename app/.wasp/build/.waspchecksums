@@ -725,7 +725,7 @@
             "file",
             "../out/sdk/wasp/ext-src/auth/LoginPage.tsx"
         ],
-        "049bee5fff46c542a0b7de5c21c16a0268d3103ff12d35632f0c6bc9f5c2b3e9"
+        "e7dd1b85b746cb97d3fbc096b88b88a6bf046e26ad139ff26e435539dbd574d8"
     ],
     [
         [
@@ -1579,7 +1579,7 @@
             "file",
             "../out/sdk/wasp/package.json"
         ],
-        "3e9c5183d271b61e390ebaa1e29be90683d34405e5b827a37c509658796b4d30"
+        "edb0e539eaf8c4eccfabea71ebf7e8b05b4f68172b85e57caa71bd28b7276527"
     ],
     [
         [
@@ -1719,21 +1719,21 @@
             "file",
             "../out/sdk/wasp/server/email/core/helpers.ts"
         ],
-        "38dc8212588ed51d0c82aaf1228c60160bb5453d7738a51b5bcef04fca862708"
+        "c623e81ec662bd6b28dc0129e371b22fd015ea3f70fe5811d50d5534181500fd"
     ],
     [
         [
             "file",
             "../out/sdk/wasp/server/email/core/index.ts"
         ],
-        "a3289d3bffbad1fbca9a78b689fb86efe565422020b19cb3d3a92e31d071ccd8"
+        "bb01f17d0383daa546d4fb5362f0da400576aa0580353c7158720a5aec82a872"
     ],
     [
         [
             "file",
-            "../out/sdk/wasp/server/email/core/providers/mailgun.ts"
+            "../out/sdk/wasp/server/email/core/providers/sendgrid.ts"
         ],
-        "b08d30bcd69b02afae6853fd6ac9ced16fdb46ae14132ee1e097969313529b05"
+        "81c0ab1719a98e24524d23a85c9a196f3c436934f9aa3aff7086e53eef74bf04"
     ],
     [
         [
@@ -1747,7 +1747,7 @@
             "file",
             "../out/sdk/wasp/server/email/index.ts"
         ],
-        "ce964d122f9b8a87f596e8ea166c4d39e94741119b0cb55b4cdb7540d78d4d6a"
+        "08076b4b3261c3f92be2111ad8bf0caeb40ecab5e89ae570cda8921e3cb06dc2"
     ],
     [
         [
@@ -2062,7 +2062,7 @@
             "file",
             "server/src/auth/providers/config/email.ts"
         ],
-        "dd0734ce5d7358679081c32faa62fcf7e85343ca9d9044d90b13e1b687706352"
+        "e2961cb2962743054c3346f7048de436e58c5086614d07c766d021e718c4bae7"
     ],
     [
         [

@@ -97,7 +97,7 @@
   "lucia": "^3.0.1",
   "oslo": "^1.1.2",
   "@lucia-auth/adapter-prisma": "^4.0.0",
-  "ts-mailgun": "^0.5.1",
+  "@sendgrid/mail": "^7.7.0",
   "uuid": "^9.0.0",
   "vitest": "^1.2.1",
   "@vitest/ui": "^1.2.1",
