@@ -27,6 +27,7 @@ app OpenSaaS {
   auth: {
     userEntity: User,
     methods: {
+      //github: {},
       // NOTE: If you decide to not use email auth, make sure to also delete the related routes and pages below.
       //   (RequestPasswordReset(Route|Page), PasswordReset(Route|Page), EmailVerification(Route|Page))
       email: {
