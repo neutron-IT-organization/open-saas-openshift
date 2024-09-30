@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
-import { LoginForm } from 'wasp/client/auth';
+import { LoginForm, useAuth } from 'wasp/client/auth';
 import { AuthPageLayout } from './AuthPageLayout';
 
 export default function Login() {
+  const { data: user } = useAuth();
+  if (user) {
+    return <Redirect to='/demo-app' />;
+  }
   return (
     <AuthPageLayout>
       <LoginForm />
