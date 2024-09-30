@@ -1402,6 +1402,13 @@
     [
         [
             "file",
+            "../out/sdk/wasp/ext-src/pages/auth.jsx"
+        ],
+        "0ec72f4af86d9b2ad0695c12396d23f4abbbfb41fb91ffa19d5edecd04353a83"
+    ],
+    [
+        [
+            "file",
             "../out/sdk/wasp/ext-src/payment/CheckoutPage.tsx"
         ],
         "24f7b717283bf8166b48bb281e75bb123c28c67480d3cfd118dde78f66688bad"
@@ -2062,7 +2069,7 @@
             "file",
             "server/src/auth/providers/config/github.ts"
         ],
-        "0bc58a64be3d89a275f36e70c506eeed1ec64c8978c908a992bb396f247334d8"
+        "ae59e3f553f9926bef9c6dd026c819d8677b36f783dbfd1f6ccad74351c4410d"
     ],
     [
         [
@@ -2580,7 +2587,7 @@
             "file",
             "web-app/src/router.tsx"
         ],
-        "19b65309a3cb19b3982b3f551c120a7e7c0de764ec6f1bb632aaab8cc052cfd9"
+        "4f5e48a3e1ace6d154783357e23b4bec1638e386f6cf6fa01e63a1bbc682c5e4"
     ],
     [
         [

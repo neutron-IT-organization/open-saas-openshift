@@ -5,7 +5,7 @@ import App from '../../../../src/client/App'
 import createAuthRequiredPage from "./auth/pages/createAuthRequiredPage"
 
 import LandingPage from '../../../../src/landing-page/LandingPage'
-import LoginPage from '../../../../src/auth/LoginPage'
+import { Login as LoginPage } from '../../../../src/pages/auth.jsx'
 import { Signup as SignupPage } from '../../../../src/auth/SignupPage'
 import { RequestPasswordResetPage } from '../../../../src/auth/email-and-pass/RequestPasswordResetPage'
 import { PasswordResetPage } from '../../../../src/auth/email-and-pass/PasswordResetPage'

@@ -4,10 +4,8 @@ import { github } from "wasp/server/auth";
 import { mergeDefaultAndUserConfig } from "../oauth/config.js";
 import { createOAuthProviderRouter } from "../oauth/handler.js";
 
-import { getGitHubUserFields } from '../../../../../../../src/auth/userSignupFields'
-const _waspUserSignupFields = getGitHubUserFields
-import { getGitHubAuthConfig } from '../../../../../../../src/auth/userSignupFields'
-const _waspUserDefinedConfigFn = getGitHubAuthConfig
+const _waspUserSignupFields = undefined
+const _waspUserDefinedConfigFn = undefined
 
 const _waspConfig: ProviderConfig = {
     id: github.id,
