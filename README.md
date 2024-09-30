@@ -13,4 +13,4 @@ wasp build
 cd
 wasp build 
 cd .wasp/build/web-app/
-npm ci && REACT_APP_API_URL=opensaas-backend.florian-ns.svc.cluster.local:3001 npm run build
+npm ci && REACT_APP_API_URL=http://opensaas-backend-florian-ns.apps.neutron-sno-office.intraneutron.fr npm run build
