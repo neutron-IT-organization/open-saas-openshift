@@ -2,7 +2,7 @@ kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
   name: opensaas-backend
-  namespace: test
+  namespace: florian-ns
 spec:
   output:
     to:
