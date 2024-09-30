@@ -1,0 +1,26 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: opensaas-backend
+  namespace: test
+spec:
+  output:
+    to:
+      kind: DockerImage
+      name: 'quay.io/florian_even/opensaas-backend:latest'
+    pushSecret:
+      name: florian-pull-secret
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile-backend
+  serviceAccount: builder
+  source:
+    type: Git
+    git:
+      uri: 'git@github.com:neutron-IT-organization/open-saas-openshift.git'
+    contextDir: /app
+    sourceSecret:
+      name: github-deploy-key
+
+
