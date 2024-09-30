@@ -100,8 +100,8 @@ page LandingPage {
 //#region Auth Pages
 route LoginRoute { path: "/login", to: LoginPage }
 page LoginPage {
-  //component: import Login from "@src/auth/LoginPage"
-  component: import { Login } from "@src/pages/auth.jsx"
+  component: import Login from "@src/auth/LoginPage"
+  //component: import { Login } from "@src/pages/auth.jsx"
 }
 
 route SignupRoute { path: "/signup", to: SignupPage }
