@@ -19,6 +19,8 @@ This should never happen, but it did which means there is a bug in the code.`);
     }
     const identities = {
         email: getProviderInfo(auth, 'email'),
+        google: getProviderInfo(auth, 'google'),
+        github: getProviderInfo(auth, 'github'),
     };
     return Object.assign(Object.assign({}, rest), { identities });
 }

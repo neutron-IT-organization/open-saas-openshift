@@ -101,5 +101,11 @@ export type OAuthData = {
      * Unique request ID that was generated during the OAuth flow.
     */
     uniqueRequestId: string;
-} & (never);
+} & ({
+    providerName: 'google';
+    tokens: import('arctic').GoogleTokens;
+} | {
+    providerName: 'github';
+    tokens: import('arctic').GitHubTokens;
+} | never);
 export {};

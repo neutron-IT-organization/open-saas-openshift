@@ -93,6 +93,7 @@
   "@types/react-router-dom": "^5.3.3",
   "@stitches/react": "^1.2.8",
   "@node-rs/argon2": "^1.8.3",
+  "arctic": "^1.2.1",
   "lucia": "^3.0.1",
   "oslo": "^1.1.2",
   "@lucia-auth/adapter-prisma": "^4.0.0",

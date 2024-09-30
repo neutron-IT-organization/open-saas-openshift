@@ -31,6 +31,8 @@ export type AuthUser = AuthUserData & {
 export type AuthUserData = Omit<CompleteUserEntityWithAuth, 'auth'> & {
   identities: {
     email: Expand<UserFacingProviderData<'email'>> | null
+    google: Expand<UserFacingProviderData<'google'>> | null
+    github: Expand<UserFacingProviderData<'github'>> | null
   },
 }
 
@@ -76,6 +78,8 @@ This should never happen, but it did which means there is a bug in the code.`)
   }
   const identities = {
     email: getProviderInfo<'email'>(auth, 'email'),
+    google: getProviderInfo<'google'>(auth, 'google'),
+    github: getProviderInfo<'github'>(auth, 'github'),
   }
   return {
     ...rest,

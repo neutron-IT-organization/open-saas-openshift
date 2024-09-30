@@ -26,6 +26,7 @@ import AdminUIAlertsPage from '../../../../src/admin/elements/ui-elements/Alerts
 import AdminUIButtonsPage from '../../../../src/admin/elements/ui-elements/ButtonsPage'
 import AdminMessagesPage from '../../../../src/messages/MessagesPage'
 
+import { OAuthCallbackPage } from "./auth/pages/OAuthCallback"
 
 import { routes } from 'wasp/client/router'
 
@@ -57,6 +58,14 @@ const router = (
   <Router basename="/">
     <App>
     <Switch>
+      {/* 
+        Wasp specific routes *must* go first to prevent user
+        defined routes from overriding them.
+        Details in https://github.com/wasp-lang/wasp/issues/2029
+      */}
+      <Route exact path="/oauth/callback">
+        <OAuthCallbackPage />
+      </Route>
       {Object.entries(routes).map(([routeKey, route]) => (
         <Route
           exact

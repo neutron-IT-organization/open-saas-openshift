@@ -8,6 +8,8 @@ export type AuthUser = AuthUserData & {
 export type AuthUserData = Omit<CompleteUserEntityWithAuth, 'auth'> & {
     identities: {
         email: Expand<UserFacingProviderData<'email'>> | null;
+        google: Expand<UserFacingProviderData<'google'>> | null;
+        github: Expand<UserFacingProviderData<'github'>> | null;
     };
 };
 type UserFacingProviderData<PN extends ProviderName> = {

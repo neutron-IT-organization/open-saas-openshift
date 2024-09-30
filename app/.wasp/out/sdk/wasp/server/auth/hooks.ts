@@ -133,5 +133,7 @@ export type OAuthData = {
   */
   uniqueRequestId: string
 } & (
+  | { providerName: 'google'; tokens: import('arctic').GoogleTokens } 
+  | { providerName: 'github'; tokens: import('arctic').GitHubTokens }
   | never
 )

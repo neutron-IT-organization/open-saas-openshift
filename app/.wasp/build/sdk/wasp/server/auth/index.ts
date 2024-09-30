@@ -32,6 +32,7 @@ export type {
   OAuthData,
 } from './hooks.js'
 
+export * from './oauth/index.js'
 
 export * from './email/index.js'
 
